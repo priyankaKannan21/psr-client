@@ -1,0 +1,12 @@
+<div class="table">
+  <ag-grid-angular
+    [style.height]="dataSource.dataTableHeight"
+    class="ag-theme-alpine"
+    [gridOptions]="gridOptions"
+    [columnDefs]="dataSource.columnDefinitions"
+    [defaultColDef]="defaultColumnDefinitions"
+    [rowData]="dataSource.rowData"
+    (gridReady)="onGridReady($event)"
+  >
+  </ag-grid-angular>
+</div>

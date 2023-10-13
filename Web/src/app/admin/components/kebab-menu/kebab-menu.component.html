@@ -1,0 +1,21 @@
+<button
+  mat-icon-button
+  [matMenuTriggerFor]="menu"
+  aria-label="Example icon-button with a menu"
+>
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <!-- TODO This function will implement edit evaluator data functionality -
+  PSRDEV-75 -->
+  <button mat-menu-item disabled="true">
+    <mat-icon>edit</mat-icon>
+    <span>Edit</span>
+  </button>
+  <!-- TODO This function will implement remove evaluator data functionality -
+  PSRDEV-76 -->
+  <button mat-menu-item disabled="true">
+    <mat-icon>delete</mat-icon>
+    <span>Delete</span>
+  </button>
+</mat-menu>

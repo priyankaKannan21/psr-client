@@ -1,0 +1,78 @@
+@import "../../../shared/utils/styles.scss";
+
+.next-previous-button {
+  @extend .row-justify-end;
+  margin-right: 20px;
+  gap: 20px;
+}
+
+.upload-display-class {
+  @extend .column-flex;
+  height: 100%;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.custom-button-class {
+  background: $primary-color;
+  box-shadow: rgba(0, 0, 0, 0.01);
+  width: 40px;
+  height: 40px;
+}
+
+::ng-deep .mat-fab .mat-button-wrapper {
+  padding: 0px;
+}
+.page-header {
+  @extend .row-justify-space-between;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.page-header-name {
+  padding-top: 10px;
+  font-size: $title-font-size;
+  font-weight: $title-font-weight;
+}
+
+.re-upload-button {
+  background: $primary-color;
+  color: $primary-button-color;
+  font-size: $secondary-font-size;
+  border: 1px solid $border-color;
+}
+
+.header-button-class {
+  @extend .row-align-center;
+  gap: 20px;
+}
+
+.horizontal-line-class {
+  width: 100%;
+  margin-top: -20px;
+}
+
+.horizontal-line-evaluator {
+  border-top: 1px solid $border-color;
+}
+
+mat-icon {
+  font-size: $icon-medium-size;
+  height: $icon-medium-size;
+}
+
+.table-container {
+  padding: 0px 30px;
+}
+
+.table-action-items {
+  @extend .row-justify-end;
+  gap: 10px;
+}
+
+.all-required-header {
+  margin: -20px 0px -10px 0px;
+  color: $dialog-file-header-color;
+  font-size: $small-font-size;
+  text-align: end;
+}

@@ -1,0 +1,25 @@
+<input
+  type="file"
+  class="csv-file-input"
+  (change)="onFileSelected($event)"
+  #fileUpload
+  accept=".csv"
+/>
+<button
+  mat-raised-button
+  color="primary"
+  class="end-evaluation-button"
+  *ngIf="isExamlyImportButtonVisible"
+  (click)="fileUpload.click()"
+>
+  Import Examly Score
+</button>
+
+<button
+  mat-raised-button
+  color="primary"
+  class="re-import-examly-button"
+  *ngIf="isExamlyReImportButtonVisible"
+>
+  Re-Import Examly Score
+</button>

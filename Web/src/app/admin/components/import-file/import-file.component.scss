@@ -1,0 +1,49 @@
+@import "../../../shared/utils/styles.scss";
+
+.upload-data-content-view {
+  @extend .column-justify-center;
+  margin-top: 80px;
+  gap: 10px;
+}
+
+.upload-content-img {
+  width: 400px;
+  align-self: center;
+}
+
+.no-list-found-header {
+  font-weight: $title-font-weight;
+  font-size: $title-font-size;
+  align-self: center;
+  color: $dialog-file-header-color;
+}
+
+.short-info-to-upload-csv-data {
+  font-size: $medium-font-size;
+  color: $dialog-file-header-color;
+  align-self: center;
+}
+
+.upload-button {
+  width: 203px;
+  height: 40px;
+  background-color: $primary-button-color;
+  color: $primary-color;
+  align-self: center;
+}
+
+.download-button {
+  width: 174px;
+  border: 1px solid $border-color;
+  box-shadow: none;
+  color: $primary-button-color;
+}
+
+.download-upload-button {
+  @extend .row-justify-center;
+  gap: 20px;
+}
+
+.csv-file-input {
+  display: none;
+}

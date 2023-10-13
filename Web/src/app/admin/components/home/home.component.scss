@@ -1,0 +1,50 @@
+@import "../../../shared/utils/styles.scss";
+
+mat-toolbar {
+  .app-logo {
+    font-size: $secondary-font-size;
+    font-weight: $title-font-weight;
+  }
+}
+
+mat-sidenav-container {
+  height: 100vh;
+}
+
+.toggle-expansion-button {
+  position: relative;
+  float: right;
+  right: 10px;
+  top: 30px;
+}
+
+.nav-list {
+  padding-top: 100px;
+
+  .list-item {
+    cursor: pointer;
+    height: 60px;
+
+    .active-menu-button {
+      outline: 3px solid $active-menu-background;
+      background-color: $active-menu-background;
+    }
+
+    .menu-item-title {
+      display: inline-block;
+      width: 150px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-left: 3px;
+    }
+  }
+
+  .active-menu-item {
+    color: $primary-button-color;
+  }
+}
+
+.sidenav-container-content {
+  height: 100%;
+}

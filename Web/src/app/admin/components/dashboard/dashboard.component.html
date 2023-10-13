@@ -1,0 +1,117 @@
+<div class="container">
+  <div class="dashboard-view" *ngIf="isRoundProgressUpdated">
+    <div>{{ errorMessage }}</div>
+    <div
+      class="choose-round-header"
+      *ngIf="
+        isEvaluationDataPresent && roundDetails.roundProgress === 'not-started'
+      "
+    >
+      <p class="choose-round">Choose the round</p>
+    </div>
+    <div
+      class="round-info"
+      *ngIf="
+        isEvaluationDataPresent && roundDetails.roundProgress === 'in-progress'
+      "
+    >
+      Round {{ roundDetails.roundNumber }} -
+      <span class="in-progress-text">In Progress</span>
+    </div>
+    <div
+      class="round-info"
+      *ngIf="
+        isEvaluationDataPresent && roundDetails.roundProgress === 'completed'
+      "
+    >
+      Round {{ roundDetails.roundNumber }} -
+      <span>Live Ended</span>
+    </div>
+    <div
+      class="complete-button"
+      *ngIf="
+        (roundDetails.roundProgress === 'completed' ||
+          roundDetails.roundProgress === 'in-progress') &&
+        evaluationDetails.length > 0 &&
+        evaluationDetails[0].netScore === null &&
+        isEvaluationDataPresent
+      "
+    >
+      <div class="complete-round">Complete Round</div>
+    </div>
+    <div
+      class="complete-button-enabled"
+      *ngIf="
+        isEvaluationDataPresent &&
+        evaluationDetails.length > 0 &&
+        evaluationDetails[0].netScore !== null
+      "
+      (click)="showDeleteDialog()"
+    >
+      <div class="complete-round">Complete Round</div>
+    </div>
+
+    <div
+      class="scoreboard-button"
+      *ngIf="
+        isEvaluationDataPresent &&
+        ((evaluationDetails.length > 0 &&
+          evaluationDetails[0].netScore !== null) ||
+          ((roundDetails.roundProgress === 'completed' ||
+            roundDetails.roundProgress === 'in-progress') &&
+            evaluationDetails.length > 0 &&
+            evaluationDetails[0].netScore === null))
+      "
+      (click)="navigateToScoreboard()"
+    >
+      <div class="go-to-scoreboard-button">Go To Scoreboard</div>
+    </div>
+
+    <div
+      class="radio-buttons"
+      *ngIf="
+        isEvaluationDataPresent && roundDetails.roundProgress === 'not-started'
+      "
+    >
+      <mat-radio-group
+        aria-label="Select an option"
+        class="rounds-options"
+        (change)="radioChange($event)"
+      >
+        <div>
+          <mat-radio-button value="4" [checked]="true"
+            >Round 4</mat-radio-button
+          >
+        </div>
+        <div><mat-radio-button value="5">Round 5</mat-radio-button></div>
+      </mat-radio-group>
+    </div>
+    <div
+      class="manage-scoreboard"
+      (click)="openManageScoreboardDialog()"
+      *ngIf="
+        isEvaluationDataPresent && roundDetails.roundProgress === 'not-started'
+      "
+    >
+      Modify Scoreboard Criteria
+    </div>
+    <div
+      class="start-evaluation"
+      *ngIf="
+        isEvaluationDataPresent && roundDetails.roundProgress === 'not-started'
+      "
+      (click)="changeRoundToInProgress()"
+    >
+      <div class="start-evaluation-text">Start Evaluation</div>
+    </div>
+    <div class="redirect-allocation" *ngIf="!isEvaluationDataPresent">
+      <div>
+        Candidate Allocation is not completed. Please click the below button to
+        re-direct to candidate allocation page.
+      </div>
+      <div class="redirect-button" (click)="redirectToCandidate()">
+        Re-direct to Candidate Allocation
+      </div>
+    </div>
+  </div>
+</div>

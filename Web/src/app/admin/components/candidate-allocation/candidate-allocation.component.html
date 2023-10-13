@@ -1,0 +1,58 @@
+<mat-stepper
+  linear
+  class="candidate-allocation-parent-class"
+  (selectionChange)="toNavigate($event)"
+>
+  <mat-step
+    [stepControl]="evaluatorStepperValidationFormGroup"
+    [ngClass]="completedEvaluatorImport ? 'completed-class' : ''"
+    completed="false"
+  >
+    <ng-template matStepLabel
+      ><div [ngClass]="completedEvaluatorImport ? 'completed-class' : ''">
+        Upload Evaluator List
+      </div></ng-template
+    >
+    <div
+      class="router-component-class"
+      [formGroup]="evaluatorStepperValidationFormGroup"
+    >
+      <app-evaluator-list
+        (completedEventEmitter)="completedEvent($event)"
+      ></app-evaluator-list>
+    </div>
+  </mat-step>
+  <mat-step
+    [stepControl]="candidateStepperValidationFormGroup"
+    completed="false"
+  >
+    <ng-template matStepLabel
+      ><div [ngClass]="completedCandidateImport ? 'completed-class' : ''">
+        Upload Candidate List
+      </div></ng-template
+    >
+    <form
+      class="router-component-class"
+      [formGroup]="candidateStepperValidationFormGroup"
+    >
+      <app-candidate-list
+        (completedEventEmitter)="completedEvent($event)"
+        (isAllocated)="handleAllocation($event)"
+      ></app-candidate-list>
+    </form>
+  </mat-step>
+  <mat-step label="Generate Evaluator-Candidate List" completed="false">
+    <ng-template matStepLabel
+      ><div [ngClass]="isStepperVisible ? 'completed-class' : ''">
+        Generate Evaluator-Candidate List
+      </div></ng-template
+    >
+    <div class="router-component-class">
+      <app-allocation-list
+        *ngIf="isStepperVisible"
+        (completedEventEmitter)="completedEvent($event)"
+        [isAllocationDataPosted]="isAllocationDone"
+      ></app-allocation-list>
+    </div>
+  </mat-step>
+</mat-stepper>

@@ -1,0 +1,18 @@
+ag-grid-angular {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.ag-theme-alpine {
+  --ag-header-background-color: #d8dadb;
+  --ag-header-column-resize-handle-color: none;
+  --ag-borders: #e1e3e3;
+
+  --ag-font-size: 12px;
+  --ag-font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.ag-theme-alpine .ag-body-viewport ::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}

@@ -1,0 +1,44 @@
+@import "../../../shared/utils/styles.scss";
+
+$opacity: 90%;
+
+.header-spacer {
+  flex: 1 1 auto;
+}
+
+.breadcrumb-items {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: $secondary-font-weight;
+  opacity: $opacity;
+  color: $breadcrumb-item-color;
+}
+
+.breadcrumb-last-item {
+  text-decoration: none;
+  font-size: $title-font-size;
+  font-weight: $title-font-weight;
+  color: $breadcrumb-item-color;
+}
+
+span {
+  font-size: $title-font-size;
+  height: $title-font-size;
+  opacity: $opacity;
+  padding: 0px 5px;
+}
+
+mat-toolbar .title {
+  font-size: $title-font-size;
+  font-weight: $title-font-weight;
+}
+
+mat-toolbar .user-name {
+  font-size: $secondary-font-size;
+  font-weight: $secondary-font-weight;
+}
+
+.profile-section {
+  @extend .row-align-center;
+  gap: 5px;
+}

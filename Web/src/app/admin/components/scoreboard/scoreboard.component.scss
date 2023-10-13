@@ -1,0 +1,133 @@
+@import "../../../shared/utils/styles.scss";
+
+$column-gap: 20px;
+$opacity: 35%;
+
+.scorecard-container {
+  background-color: $primary-color;
+  height: 87.5vh;
+
+  .scorecard-header {
+    @extend .row-justify-space-between;
+    padding: 20px 30px;
+    border-bottom: 1px solid $border-color;
+  }
+}
+.navigate-text-link {
+  color: green;
+  font-weight: 500;
+  text-decoration: none;
+}
+.container {
+  box-sizing: border-box;
+  height: 92.5vh;
+  padding: 20px;
+  background-color: $app-bg-color;
+}
+
+.header-display-items {
+  @extend .row-align-center;
+  gap: $column-gap;
+}
+
+.scorecard-header mat-icon {
+  font-size: $icon-large-size;
+  width: $icon-large-size;
+  height: $icon-large-size;
+}
+
+mat-icon.error-icon {
+  color: $warning-color;
+}
+
+mat-icon.check-icon {
+  color: $success-color;
+}
+
+.message {
+  @extend .row-align-center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: $secondary-font-weight;
+}
+.navigate-text {
+  @extend .message;
+  font-size: 16px;
+}
+.navigate-text-link:hover {
+  border-bottom: 2px solid green;
+}
+.primary-button {
+  background-color: $primary-button-color;
+  color: $primary-color;
+}
+
+.header-title-and-live {
+  @extend .row-align-center;
+}
+
+.header-title {
+  font-size: $title-font-size;
+  font-weight: $title-font-weight;
+}
+
+.header-display-live {
+  @extend .row-align-center;
+  font-size: $small-font-size;
+  height: $title-font-size;
+  font-weight: $title-font-weight;
+  border: 1px solid $border-color;
+  padding: 0px 7px;
+  margin-left: 5px;
+  border-radius: 20px;
+}
+
+.display-live-round {
+  font-size: $small-font-size;
+  font-weight: $title-font-weight;
+  opacity: $opacity;
+}
+
+.header-action-items {
+  display: flex;
+  gap: $column-gap;
+}
+
+.mat-raised-button {
+  box-shadow: none;
+}
+
+.table-container {
+  padding: 10px 30px;
+}
+
+.disable-table-view {
+  pointer-events: none;
+  opacity: 30%;
+}
+
+.table-action-items {
+  @extend .row-justify-end;
+  gap: 10px;
+}
+
+.table-action-items button {
+  @extend .row-align-center;
+  padding: 0px 5px;
+  border-radius: 7px;
+}
+
+.refresh-button {
+  min-width: unset !important;
+}
+
+.table-container mat-icon {
+  font-size: $icon-medium-size;
+  height: $icon-medium-size;
+}
+
+.table-action-items .button-text {
+  font-size: $secondary-font-size;
+  font-weight: $title-font-weight;
+  padding: 0px 5px;
+}

@@ -1,0 +1,65 @@
+@import "../../../shared/utils/styles.scss";
+
+.candidate-allocation-parent-class {
+  @extend .column-flex;
+  background-color: $app-bg-color;
+  height: 92%;
+}
+
+.router-component-class {
+  padding: 15px 0px 30px 0px;
+  border-radius: 8px;
+  height: 94%;
+  background: $primary-color;
+}
+
+::ng-deep .mat-horizontal-stepper-wrapper {
+  @extend .column-flex;
+  height: 100%;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container {
+  @extend .row-align-center;
+  white-space: nowrap;
+  height: 12%;
+}
+
+::ng-deep .mat-horizontal-content-container {
+  overflow: hidden;
+  padding: 0 24px 24px 24px;
+  height: 88%;
+}
+
+::ng-deep
+  .mat-horizontal-stepper-content:not(
+    .mat-horizontal-stepper-content-inactive
+  ) {
+  visibility: inherit !important;
+  height: 100%;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container {
+  @extend .row-align-center;
+  white-space: nowrap;
+  padding: 0px 120px;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected {
+  color: $primary-color;
+  background-color: $primary-button-color;
+}
+
+.completed-class {
+  color: $primary-button-color;
+  font-weight: $title-font-weight;
+  cursor: pointer;
+}
+
+mat-icon {
+  font-size: $icon-medium-size;
+  height: $icon-medium-size;
+}
+
+.mat-step-header {
+  pointer-events: none !important;
+}

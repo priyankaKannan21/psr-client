@@ -1,0 +1,34 @@
+<div class="dialog-content-class">
+  <div mat-dialog-title class="dialog-content-header">
+    Upload {{ data.headerValue }} List
+  </div>
+  <div matDialogContent class="dialog-content-upload-filename">
+    {{ data.fileName }}
+  </div>
+  <div matDialogContent class="dialog-content-loading">
+    <mat-spinner [diameter]="25" *ngIf="data.type === 'loading'"></mat-spinner>
+    <mat-icon *ngIf="data.type === 'done'" class="done-class">check</mat-icon>
+    <mat-icon *ngIf="data.type === 'error'" color="warn">error</mat-icon>
+    <div class="dialog-content-loading-header">{{ data.message }}</div>
+  </div>
+  <div class="download-done-button-class">
+    <button
+      mat-flat-button
+      [ngClass]="
+        data.type === 'error' && data.buttonName !== 'Ok'
+          ? 'done-cancel-button'
+          : 'cancel-button'
+      "
+      mat-dialog-close
+      (click)="close()"
+    >
+      {{ data.buttonName }}
+    </button>
+    <app-download-template-button
+      [styleClassName]="secondaryDownloadTemplateButton"
+      [fileName]="fileName"
+      *ngIf="data.type === 'error' && data.buttonName !== 'Ok'"
+      mat-dialog-close
+    ></app-download-template-button>
+  </div>
+</div>

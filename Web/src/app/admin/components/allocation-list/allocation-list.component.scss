@@ -1,0 +1,99 @@
+@import "../../../shared/utils/styles.scss";
+
+.next-previous-button {
+  @extend .row-justify-end;
+  margin-right: 20px;
+  gap: 20px;
+}
+
+.upload-display-class {
+  @extend .column-flex;
+  height: 100%;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.custom-button-class {
+  background: $primary-color;
+  box-shadow: rgba(0, 0, 0, 0.01);
+  width: 40px;
+  height: 40px;
+}
+
+::ng-deep .mat-fab .mat-button-wrapper {
+  padding: 0px;
+}
+
+.page-header {
+  @extend .row-justify-space-between;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.page-header-name {
+  font-size: $title-font-size;
+  font-weight: $title-font-weight;
+}
+
+.header-button-class {
+  @extend .row-align-center;
+  gap: 20px;
+}
+
+.horizontal-line-class {
+  width: 100%;
+  margin-top: -20px;
+}
+
+.new-evaluator-button {
+  background: $primary-button-color;
+  color: $primary-color;
+  font-size: $secondary-font-size;
+}
+
+.horizontal-line-evaluator {
+  border-top: 1px solid $border-color;
+}
+
+.completed-class {
+  color: $primary-button-color;
+  font-weight: $title-font-weight;
+}
+
+mat-icon {
+  font-size: $icon-medium-size;
+  height: $icon-medium-size;
+}
+
+.table-container {
+  padding: 0px 30px;
+}
+.message {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}
+.check-icon {
+  color: green;
+}
+.message-icon {
+  padding-top: 1%;
+}
+.navigate-text {
+  font-size: 16px;
+}
+.navigate-text-link {
+  color: green;
+  font-weight: 500;
+  text-decoration: none;
+}
+.navigate-text-link:hover {
+  border-bottom: 2px solid green;
+}

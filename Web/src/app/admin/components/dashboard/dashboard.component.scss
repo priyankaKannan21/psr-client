@@ -1,0 +1,219 @@
+$primary-color: #ffffff;
+$border-color: #c4c6cf;
+$app-bg-color: #f8fafa;
+$myMatRadioRippleColor: #24a0ed;
+
+.scoreboard-details-title {
+  color: var(--m-3-sys-light-on-surface, #191c1d);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+
+.complete-button-enabled {
+  cursor: pointer;
+  @extend .complete-button;
+  background: var(--m-3-sys-light-primary, #0058ca) !important;
+}
+
+.score-board {
+  width: 1312px;
+  height: 795px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--m-3-sys-light-surface-container-lowest, #fff);
+  box-shadow: 0px 0px 1px 0px rgba(116, 119, 127, 0.02),
+    0px 0px 6px 0px rgba(116, 119, 127, 0.06);
+}
+
+.dashboard-view {
+  background-color: $primary-color;
+  height: 87.5vh;
+  padding: 20px;
+  .dashboard-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.container {
+  box-sizing: border-box;
+  height: 92.5vh;
+  padding: 20px;
+  background-color: $app-bg-color;
+}
+
+.choose-round-header {
+  padding: 20px 30px;
+}
+
+.choose-round {
+  color: var(--m-3-sys-light-on-surface, #191c1d);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+
+.radio-buttons {
+  padding: 5px 60px;
+}
+
+.manage-scoreboard {
+  margin-left: 2%;
+  margin-top: 2%;
+  cursor: pointer;
+  display: inline-flex;
+  padding: 10px 24px;
+  border-radius: 6px;
+  color: var(--m-3-sys-light-primary, #0058ca);
+  border: 1px solid var(--m-3-sys-light-outline-variant, #c4c6cf);
+}
+
+.rounds-options {
+  display: flex;
+  flex-direction: row;
+  column-gap: 60px;
+}
+
+::ng-deep .mat-radio-button.mat-accent {
+  &.mat-radio-checked .mat-radio-outer-circle {
+    border-color: $myMatRadioRippleColor;
+  }
+
+  .mat-radio-inner-circle {
+    color: $myMatRadioRippleColor;
+    background-color: $myMatRadioRippleColor;
+  }
+
+  .mat-radio-ripple .mat-ripple-element {
+    background-color: $myMatRadioRippleColor !important;
+  }
+}
+
+.error-message {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  margin-left: 35px;
+  margin-top: 20px;
+  color: red;
+}
+
+.start-evaluation {
+  margin-top: 2%;
+  margin-left: 2%;
+  border-radius: 100px;
+  background: var(--m-3-sys-light-primary, #0058ca);
+  box-shadow: 0px 1px 5px 4px rgba(0, 0, 0, 0.1),
+    0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  width: fit-content;
+  align-content: center;
+  padding: 1px 23px;
+  height: 56px;
+  color: var(--m-3-sys-light-on-primary, #fff);
+  letter-spacing: 0.1px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.start-evaluation-text {
+  align-self: center;
+}
+
+.round-info {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  margin-left: 35px;
+  margin-top: 20px;
+}
+
+.complete-button {
+  border-radius: 100px;
+  background: rgba(25, 28, 29, 0.12);
+  display: flex;
+  width: 215px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 35px;
+  margin-top: 40px;
+}
+
+.complete-round {
+  color: var(--m-3-sys-light-on-primary, #fff);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+
+.scoreboard-button {
+  border-radius: 6px;
+  border: 1px solid var(--m-3-sys-light-outline-variant, #c4c6cf);
+  display: flex;
+  width: 345px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 35px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.go-to-scoreboard-button {
+  color: var(--m-3-sys-light-on-surface-variant, #43474e);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+
+.redirect-allocation {
+  color: var(--m-3-sys-light-on-surface, #191c1d);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  margin-top: 20px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.redirect-button {
+  cursor: pointer;
+  display: inline-flex;
+  height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  align-self: stretch;
+  color: var(--m-3-sys-light-primary, #0058ca);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  border-radius: 6px;
+  border: 1px solid var(--m-3-sys-light-outline-variant, #c4c6cf);
+  width: fit-content;
+}
+
+.in-progress-text {
+  color: #32a636;
+}

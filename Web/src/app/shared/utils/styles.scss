@@ -1,0 +1,59 @@
+$title-font-weight: 500;
+$secondary-font-weight: 400;
+
+$breadcrumb-item-color: #191c1d;
+$active-menu-background: #0058ca29;
+$primary-button-color: #0058ca;
+$primary-color: #ffffff;
+$border-color: #c4c6cf;
+$app-bg-color: #f8fafa;
+$success-color: #06c802;
+$warning-color: #b62500;
+$dialog-file-header-color: #43474e;
+
+$small-font-size: 11px;
+$medium-font-size: 12px;
+$secondary-font-size: 14px;
+$title-font-size: 16px;
+$icon-medium-size: 18px;
+$icon-large-size: 20px;
+
+$opacity: 35%;
+
+
+.row-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.row-justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.row-justify-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-toolbar {
+  background-color: $primary-color;
+  height: 7.5vh;
+  border-bottom: 1px solid $border-color;
+}
+
+.column-flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.column-justify-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row-justify-center {
+  display: flex;
+  justify-content: center;
+}
