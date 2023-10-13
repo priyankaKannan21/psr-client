@@ -3,11 +3,7 @@
 
 name: Crud Application test
 
-on:
-  push:
-    branches: [ "develop" ]
-  pull_request:
-    branches: [ "main" ]
+on: push
 
 jobs:
   ubuntu-build:
