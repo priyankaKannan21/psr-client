@@ -15,7 +15,7 @@ jobs:
     - name: Use Node.js 6.14.8
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 6.14.8
     - name: Install dependencies
       run: |
         cd Web
