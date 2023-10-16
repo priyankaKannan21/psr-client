@@ -21,4 +21,4 @@ jobs:
         cd Web
         npm install
     - name: Test code
-      run: ng test
+      run: npm test
