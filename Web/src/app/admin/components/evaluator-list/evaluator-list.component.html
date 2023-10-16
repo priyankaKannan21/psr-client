@@ -1,0 +1,41 @@
+<div *ngIf="postError">Failed to load data</div>
+<div class="upload-display-class">
+  <div class="page-header" *ngIf="isTableViewDisabled">
+    <div class="page-header-name">Evaluator Details</div>
+    <div class="header-button-class">
+      <button mat-flat-button disabled class="re-upload-button">
+        Re-upload List
+      </button>
+      <button mat-raised-button disabled class="new-evaluator-button">
+        <mat-icon class="material-icons-round"> add </mat-icon> New Evaluator
+      </button>
+    </div>
+  </div>
+  <div class="horizontal-line-class" *ngIf="isTableViewDisabled">
+    <hr class="horizontal-line-evaluator" />
+  </div>
+  <app-import-file
+    [dataSource]="dataSource"
+    *ngIf="isFileUploadViewDisabled && !isTableViewDisabled"
+    (dataEmitterEvent)="fileDataEvent($event)"
+  ></app-import-file>
+  <div class="table-container" *ngIf="isTableViewDisabled">
+    <div class="table-action-items">
+      <div class="all-required-header">* are required fields</div>
+    </div>
+    <app-table [dataSource]="dataSource"></app-table>
+  </div>
+  <div class="next-previous-button">
+    <button
+      mat-fab
+      matStepperNext
+      [disabled]="!isTableViewDisabled"
+      class="custom-button-class"
+      [routerLink]="['../candidate-allocation']"
+      [queryParams]="{ page: 'student-detail' }"
+      [disabled]="isFileUploadViewDisabled && !isTableViewDisabled"
+    >
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+  </div>
+</div>

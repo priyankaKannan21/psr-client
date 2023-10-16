@@ -1,0 +1,394 @@
+<form [formGroup]="form">
+  <div class="weightage-dialog">
+    <div class="dialog-heading">
+      <div>Modify Scoreboard Criteria</div>
+      <div>
+        <span class="material-icons-round clear-button" (click)="close()">
+          clear
+        </span>
+      </div>
+    </div>
+    <div class="hr-line-top"></div>
+    <div *ngIf="criteriaData.isMaxScoreEditable">
+      <div class="criteria-maxScore">
+        <div class="criteria-name">
+          {{ criteriaData.criteriaName.criteria1 }}
+        </div>
+        <div class="criteria-maxBox">
+          <div class="max-text">Max</div>
+          <input
+            type="number"
+            class="max-input"
+            formControlName="criteria1MaxScore"
+          />
+          <div
+            class="errorMessage"
+            *ngIf="
+              form.get('criteria1MaxScore')?.hasError('required') &&
+              form.get('criteria1MaxScore')?.touched
+            "
+          >
+            <span class="material-icons-round"> priority_high </span>
+            <div class="error-message">{{ numberIsRequired }}</div>
+          </div>
+          <div
+            class="errorMessage"
+            *ngIf="
+              form.get('criteria1MaxScore')?.hasError('min') &&
+              form.get('criteria1MaxScore')?.touched
+            "
+          >
+            <span class="material-icons-round"> priority_high </span>
+            <div class="error-message">
+              {{ numberShouldBeGreaterThanOne }}
+            </div>
+          </div>
+          <div
+            class="errorMessage"
+            *ngIf="
+              form.get('criteria1MaxScore')?.hasError('decimalError') &&
+              form.get('criteria1MaxScore')?.touched
+            "
+          >
+            <span class="material-icons-round"> priority_high </span>
+            <div class="error-message">{{ numberShouldNotBeDecimal }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="criteria-maxScore">
+        <div class="criteria-name">
+          {{ criteriaData.criteriaName.criteria2 }}
+        </div>
+        <div class="criteria-maxBox">
+          <div class="max-text">Max</div>
+          <input
+            type="number"
+            class="max-input"
+            formControlName="criteria2MaxScore"
+          />
+          <div
+            class="errorMessage"
+            *ngIf="
+              form.get('criteria2MaxScore')?.hasError('required') &&
+              form.get('criteria2MaxScore')?.touched
+            "
+          >
+            <span class="material-icons-round"> priority_high </span>
+            <div class="error-message">{{ numberIsRequired }}</div>
+          </div>
+          <div
+            class="errorMessage"
+            *ngIf="
+              form.get('criteria2MaxScore')?.hasError('min') &&
+              form.get('criteria2MaxScore')?.touched
+            "
+          >
+            <span class="material-icons-round"> priority_high </span>
+            <div class="error-message">
+              {{ numberShouldBeGreaterThanOne }}
+            </div>
+          </div>
+          <div
+            class="errorMessage"
+            *ngIf="
+              form.get('criteria2MaxScore')?.hasError('decimalError') &&
+              form.get('criteria2MaxScore')?.touched
+            "
+          >
+            <span class="material-icons-round"> priority_high </span>
+            <div class="error-message">{{ numberShouldNotBeDecimal }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="criteria-maxScore">
+        <div class="criteria-name">
+          {{ criteriaData.criteriaName.criteria3 }}
+        </div>
+        <div class="criteria-maxBox">
+          <div class="max-text">Max</div>
+          <input
+            type="number"
+            class="max-input"
+            formControlName="criteria3MaxScore"
+          />
+          <div
+            class="errorMessage"
+            *ngIf="
+              form.get('criteria3MaxScore')?.hasError('required') &&
+              form.get('criteria3MaxScore')?.touched
+            "
+          >
+            <span class="material-icons-round"> priority_high </span>
+            <div class="error-message">{{ numberIsRequired }}</div>
+          </div>
+          <div
+            class="errorMessage"
+            *ngIf="
+              form.get('criteria3MaxScore')?.hasError('min') &&
+              form.get('criteria3MaxScore')?.touched
+            "
+          >
+            <span class="material-icons-round"> priority_high </span>
+            <div class="error-message">
+              {{ numberShouldBeGreaterThanOne }}
+            </div>
+          </div>
+          <div
+            class="errorMessage"
+            *ngIf="
+              form.get('criteria3MaxScore')?.hasError('decimalError') &&
+              form.get('criteria3MaxScore')?.touched
+            "
+          >
+            <span class="material-icons-round"> priority_high </span>
+            <div class="error-message">{{ numberShouldNotBeDecimal }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      *ngIf="isCurrentRoundHasExamlyScore && !criteriaData.isMaxScoreEditable"
+    >
+      <div class="criteria-maxScore">
+        <div class="criteria-name">
+          {{ criteriaData.criteriaName.criteria3 }}
+        </div>
+        <div class="criteria-maxBox">
+          <div class="max-text">Max</div>
+          <input
+            type="number"
+            class="max-input"
+            formControlName="criteria3MaxScore"
+          />
+          <div
+            class="errorMessage"
+            *ngIf="
+              form.get('criteria3MaxScore')?.hasError('required') &&
+              form.get('criteria3MaxScore')?.touched
+            "
+          >
+            <span class="material-icons-round"> priority_high </span>
+            <div class="error-message">{{ numberIsRequired }}</div>
+          </div>
+          <div
+            class="errorMessage"
+            *ngIf="
+              form.get('criteria3MaxScore')?.hasError('min') &&
+              form.get('criteria3MaxScore')?.touched
+            "
+          >
+            <span class="material-icons-round"> priority_high </span>
+            <div class="error-message">
+              {{ numberShouldBeGreaterThanOne }}
+            </div>
+          </div>
+          <div
+            class="errorMessage"
+            *ngIf="
+              form.get('criteria3MaxScore')?.hasError('decimalError') &&
+              form.get('criteria3MaxScore')?.touched
+            "
+          >
+            <span class="material-icons-round"> priority_high </span>
+            <div class="error-message">{{ numberShouldNotBeDecimal }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="netscore-calculation">
+      <div class="net-score-title">Net Score</div>
+      <div class="errorMessage" *ngIf="form.hasError('sumError')">
+        <span class="material-icons-round"> priority_high </span>
+        <div class="error-message">{{ WeightageSumNot100 }}</div>
+      </div>
+    </div>
+    <div class="criteria-weightage-box">
+      <div class="equal-to-text">Is Equal To</div>
+      <div class="criteria-weightage">
+        <div class="sum-box">Sum of</div>
+        <input
+          type="number"
+          class="weightage-input"
+          formControlName="criteria1Weightage"
+        />
+        <div class="weightage-criteria-name">
+          {{ criteriaData.criteriaName.criteria1 }}
+        </div>
+        <div
+          class="errorMessage"
+          *ngIf="
+            form.get('criteria1Weightage')?.hasError('required') &&
+            form.get('criteria1Weightage')?.touched
+          "
+        >
+          <span class="material-icons-round"> priority_high </span>
+          <div class="error-message">{{ numberIsRequired }}</div>
+        </div>
+
+        <div
+          class="errorMessage"
+          *ngIf="
+            form.get('criteria1Weightage')?.hasError('min') &&
+            form.get('criteria1Weightage')?.touched
+          "
+        >
+          <span class="material-icons-round"> priority_high </span>
+          <div class="error-message">
+            {{ numberShouldBeGreaterThanOne }}
+          </div>
+        </div>
+        <div
+          class="errorMessage"
+          *ngIf="
+            form.get('criteria1Weightage')?.hasError('decimalError') &&
+            form.get('criteria1Weightage')?.touched
+          "
+        >
+          <span class="material-icons-round"> priority_high </span>
+          <div class="error-message">{{ numberShouldNotBeDecimal }}</div>
+        </div>
+      </div>
+      <div class="criteria-weightage">
+        <div class="add-box">and</div>
+        <input
+          type="number"
+          class="weightage-input"
+          formControlName="criteria2Weightage"
+        />
+        <div class="weightage-criteria-name">
+          {{ criteriaData.criteriaName.criteria2 }}
+        </div>
+        <div
+          class="errorMessage"
+          *ngIf="
+            form.get('criteria2Weightage')?.hasError('required') &&
+            form.get('criteria2Weightage')?.touched
+          "
+        >
+          <span class="material-icons-round"> priority_high </span>
+          <div class="error-message">{{ numberIsRequired }}</div>
+        </div>
+
+        <div
+          class="errorMessage"
+          *ngIf="
+            form.get('criteria2Weightage')?.hasError('min') &&
+            form.get('criteria2Weightage')?.touched
+          "
+        >
+          <span class="material-icons-round"> priority_high </span>
+          <div class="error-message">
+            {{ numberShouldBeGreaterThanOne }}
+          </div>
+        </div>
+        <div
+          class="errorMessage"
+          *ngIf="
+            form.get('criteria2Weightage')?.hasError('decimalError') &&
+            form.get('criteria2Weightage')?.touched
+          "
+        >
+          <span class="material-icons-round"> priority_high </span>
+          <div class="error-message">{{ numberShouldNotBeDecimal }}</div>
+        </div>
+      </div>
+      <div class="criteria-weightage">
+        <div class="add-box">and</div>
+        <input
+          type="number"
+          class="weightage-input"
+          formControlName="criteria3Weightage"
+        />
+        <div class="weightage-criteria-name">
+          {{ criteriaData.criteriaName.criteria3 }}
+        </div>
+        <div
+          class="errorMessage"
+          *ngIf="
+            form.get('criteria3Weightage')?.hasError('required') &&
+            form.get('criteria3Weightage')?.touched
+          "
+        >
+          <span class="material-icons-round"> priority_high </span>
+          <div class="error-message">{{ numberIsRequired }}</div>
+        </div>
+        <div
+          class="errorMessage"
+          *ngIf="
+            form.get('criteria3Weightage')?.hasError('min') &&
+            form.get('criteria3Weightage')?.touched
+          "
+        >
+          <span class="material-icons-round"> priority_high </span>
+          <div class="error-message">
+            {{ numberShouldBeGreaterThanOne }}
+          </div>
+        </div>
+        <div
+          class="errorMessage"
+          *ngIf="
+            form.get('criteria3Weightage')?.hasError('decimalError') &&
+            form.get('criteria3Weightage')?.touched
+          "
+        >
+          <span class="material-icons-round"> priority_high </span>
+          <div class="error-message">{{ numberShouldNotBeDecimal }}</div>
+        </div>
+      </div>
+      <div class="hr-line-middle"></div>
+      <div class="netscore-maxScore">
+        <div class="max-text">Max</div>
+        <input
+          type="number"
+          class="weightage-input"
+          formControlName="netScoreMaxScore"
+        />
+        <div
+          class="errorMessage"
+          *ngIf="
+            form.get('netScoreMaxScore')?.hasError('required') &&
+            form.get('netScoreMaxScore')?.touched
+          "
+        >
+          <span class="material-icons-round"> priority_high </span>
+          <div class="error-message">{{ numberIsRequired }}</div>
+        </div>
+        <div
+          class="errorMessage"
+          *ngIf="
+            form.get('netScoreMaxScore')?.hasError('min') &&
+            form.get('netScoreMaxScore')?.touched
+          "
+        >
+          <span class="material-icons-round"> priority_high </span>
+          <div class="error-message">
+            {{ numberShouldBeGreaterThanOne }}
+          </div>
+        </div>
+        <div
+          class="errorMessage"
+          *ngIf="
+            form.get('netScoreMaxScore')?.hasError('decimalError') &&
+            form.get('netScoreMaxScore')?.touched
+          "
+        >
+          <span class="material-icons-round"> priority_high </span>
+          <div class="error-message">{{ numberShouldNotBeDecimal }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="hr-line-bottom"></div>
+
+    <div class="dialog-buttons">
+      <div class="discard-button" (click)="close()">Discard</div>
+      <div
+        class="submit-button"
+        (click)="editWeightageMaxScore()"
+        [style.pointer-events]="form.valid ? 'auto' : 'none'"
+        [ngClass]="!form.valid ? 'submit-button-disabled' : 'submit-button'"
+      >
+        Apply Changes
+      </div>
+    </div>
+  </div>
+</form>

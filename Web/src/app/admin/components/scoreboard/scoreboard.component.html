@@ -1,0 +1,134 @@
+<div class="container">
+  <div class="scorecard-container">
+    <div class="scorecard-header">
+      <div class="header-display-items">
+        <div>
+          <div class="header-title-and-live">
+            <div class="header-title">Scoreboard</div>
+
+            <div class="header-display-live">
+              {{
+                roundData.roundProgress === "in-progress"
+                  ? "Live"
+                  : "Live ended"
+              }}
+            </div>
+          </div>
+          <div class="display-live-round">
+            Round {{ roundData.roundNumber }}
+          </div>
+        </div>
+        <div
+          *ngIf="
+            roundData.roundProgress === 'completed' &&
+            (isExamlyScoreImported || roundData.roundNumber === 5) &&
+            showCompleteRound
+          "
+          class="navigate-text"
+        >
+          Want to Complete Round?
+          <a [routerLink]="['/dashboard']" class="navigate-text-link">
+            Click Here!
+          </a>
+        </div>
+        <div *ngIf="errorMessage" class="message">
+          <mat-icon class="material-icons-round error-icon">
+            priority_high
+          </mat-icon>
+          <div>{{ errorMessage }}</div>
+        </div>
+
+        <div *ngIf="successMessage" class="message">
+          <mat-icon class="check-icon material-icons-round"> check </mat-icon>
+          <div>{{ successMessage }}</div>
+        </div>
+
+        <div *ngIf="loadingMessage" class="message">
+          <mat-spinner [diameter]="20"></mat-spinner>
+          <div>{{ loadingMessage }}</div>
+        </div>
+
+        <div
+          *ngIf="displayExamlyErrorSuccessMessage.errorSuccessMessage"
+          class="message"
+        >
+          <mat-icon
+            *ngIf="!displayExamlyErrorSuccessMessage.successStatus"
+            class="material-icons-round error-icon"
+          >
+            priority_high
+          </mat-icon>
+          <div>{{ displayExamlyErrorSuccessMessage.errorSuccessMessage }}</div>
+        </div>
+      </div>
+      <div class="header-action-items">
+        <div
+          *ngIf="roundData.roundProgress === 'in-progress'"
+          class="end-evaluation-button"
+        >
+          <button
+            mat-raised-button
+            class="primary-button"
+            (click)="endEvaluation()"
+          >
+            End Evaluation
+          </button>
+        </div>
+        <app-netscore-calculation
+          #netScoreCalculation
+          (displayError)="displayErrorAndSuccessMessages($event)"
+          (examlyNetScore)="displayExamlyNetScoreColumns($event)"
+        ></app-netscore-calculation>
+        <div
+          *ngIf="
+            roundData.roundProgress === 'completed' &&
+            (isExamlyScoreImported || roundData.roundNumber === 5)
+          "
+          class="download-scoreboard-button"
+        >
+          <button
+            mat-raised-button
+            class="primary-button"
+            (click)="downloadScoreboard()"
+          >
+            Download Scoreboard
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="table-container"
+      [ngClass]="dataSource.isTableViewDisabled ? 'disable-table-view' : ''"
+    >
+      <div class="table-action-items">
+        <div>
+          <button
+            title="Refresh"
+            class="refresh-button"
+            mat-stroked-button
+            disabled
+          >
+            <mat-icon class="material-icons-outlined">replay</mat-icon>
+          </button>
+        </div>
+
+        <div class="manage-columns-button">
+          <button mat-stroked-button disabled>
+            <mat-icon class="material-icons-outlined">view_week</mat-icon>
+            <span class="button-text">Manage Columns</span>
+            <mat-icon class="material-icons-round">arrow_drop_down</mat-icon>
+          </button>
+        </div>
+
+        <div class="filter-button">
+          <button disabled mat-stroked-button>
+            <mat-icon class="material-icons-outlined">filter_alt</mat-icon>
+            <span class="button-text">Filter</span>
+            <mat-icon class="material-icons-round">arrow_drop_down</mat-icon>
+          </button>
+        </div>
+      </div>
+      <app-table [dataSource]="dataSource"></app-table>
+    </div>
+  </div>
+</div>

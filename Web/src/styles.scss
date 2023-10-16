@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@import "ag-grid-community/styles/ag-grid.css";
+@import "ag-grid-community/styles/ag-theme-alpine.css";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.ag-root-wrapper {
+  border-radius: 7px;
+}
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: #43474e;
+}
+
+.column-class {
+  padding-left: 30px;
+}
+
+.ag-root-wrapper {
+  border-radius: 7px;
+}
+.weightage-maxscore-dialog mat-dialog-container {
+  &.mat-dialog-container {
+    padding: 0 !important;
+  }
+}
+.delete-dialog mat-dialog-container {
+  &.mat-dialog-container {
+    width: 312px !important;
+    border-radius: 12px;
+    background: var(--m-3-sys-light-surface-container-lowest, #fff);
+    box-shadow: 0px 1px 5px 4px rgba(0, 0, 0, 0.1),
+      0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    padding: 0px;
+  }
+}

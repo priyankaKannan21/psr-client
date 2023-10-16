@@ -1,0 +1,48 @@
+<div *ngIf="postError">Failed to load data</div>
+<div class="upload-display-class">
+  <div class="page-header">
+    <div class="header-message">
+      <div class="page-header-name">Allocation Details</div>
+      <div *ngIf="isSuccessMessageVisible" class="message">
+        <div class="message-icon">
+          <mat-icon class="check-icon material-icons-round"> check </mat-icon>
+        </div>
+        <div>{{ successMessage }}</div>
+      </div>
+      <div *ngIf="isAllocationCompleted" class="navigate-text">
+        Want to Start Round?
+        <a [routerLink]="['/dashboard']" class="navigate-text-link">
+          Click Here!
+        </a>
+      </div>
+    </div>
+
+    <div class="header-button-class">
+      <button
+        mat-raised-button
+        class="new-evaluator-button"
+        (click)="downloadAllocationData()"
+      >
+        <mat-icon> file_download </mat-icon>
+        Download Details
+      </button>
+    </div>
+  </div>
+  <div class="horizontal-line-class">
+    <hr class="horizontal-line-evaluator" />
+  </div>
+  <div class="table-container">
+    <app-table [dataSource]="dataSource"></app-table>
+  </div>
+  <div class="next-previous-button">
+    <button
+      mat-fab
+      matStepperPrevious
+      class="custom-button-class"
+      [routerLink]="['../candidate-allocation']"
+      [queryParams]="{ page: 'student-detail' }"
+    >
+      <mat-icon>navigate_before</mat-icon>
+    </button>
+  </div>
+</div>

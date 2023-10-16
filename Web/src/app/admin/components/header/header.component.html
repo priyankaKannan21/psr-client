@@ -1,0 +1,27 @@
+<mat-toolbar class="app-toolbar">
+  <ng-container *ngFor="let breadcrumb of breadcrumbs; let last = last">
+    <a *ngIf="!last" class="breadcrumb-items" [routerLink]="breadcrumb.url">{{
+      breadcrumb.label
+    }}</a>
+    <a
+      *ngIf="last"
+      class="breadcrumb-last-item"
+      [routerLink]="breadcrumb.url"
+      >{{ breadcrumb.label }}</a
+    >
+    <span *ngIf="!last" class="breadcrumb-arrow" class="material-icons-round">
+      chevron_right
+    </span>
+  </ng-container>
+  <span class="header-spacer"></span>
+
+  <div class="profile-section">
+    <mat-icon class="material-icons-round"> account_circle </mat-icon>
+
+    <div class="user-name">Admin</div>
+
+    <mat-icon class="material-icons-round" title="Settings"
+      >arrow_drop_down</mat-icon
+    >
+  </div>
+</mat-toolbar>

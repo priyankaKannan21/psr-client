@@ -1,0 +1,46 @@
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav opened="true" mode="side">
+    <mat-toolbar class="app-toolbar"> </mat-toolbar>
+
+    <div class="toggle-expansion-button">
+      <button mat-icon-button disableRipple="true" (click)="toggleSidenavBar()">
+        <mat-icon
+          [title]="isSidenavExpanded ? 'Collapse' : 'Expand'"
+          class="material-icons-outlined"
+          >{{
+            isSidenavExpanded ? "arrow_circle_left" : "arrow_circle_right"
+          }}</mat-icon
+        >
+      </button>
+    </div>
+
+    <mat-list class="nav-list">
+      <mat-list-item
+        class="list-item"
+        *ngFor="let item of menuItems"
+        [routerLink]="item.routerLink"
+        routerLinkActive="active-menu-item"
+        [title]="item.title"
+      >
+        <button
+          mat-icon-button
+          disableRipple="true"
+          routerLinkActive="active-menu-button"
+        >
+          <mat-icon class="material-icons-outlined">{{
+            item.iconName
+          }}</mat-icon>
+        </button>
+        <span class="menu-item-title" *ngIf="isSidenavExpanded">{{
+          item.title
+        }}</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+
+  <div class="sidenav-container-content">
+    <app-header></app-header>
+
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

@@ -1,0 +1,84 @@
+@import "../../../shared/utils/styles.scss";
+
+.dialog-content-class {
+  @extend .column-flex;
+  width: 350px;
+  border-radius: $medium-font-size;
+}
+
+.dialog-content-header {
+  font-weight: $title-font-weight;
+  font-size: $title-font-size;
+  color: $breadcrumb-item-color;
+}
+
+.dialog-content-upload-filename {
+  color: $dialog-file-header-color;
+}
+
+.dialog-content-loading {
+  display: flex;
+  margin-top: 10px;
+  width: fit-content;
+  height: 40px;
+  gap: 10px;
+}
+
+.dialog-content-loading-header {
+  margin: 4px;
+  color: $dialog-file-header-color;
+  font-size: $medium-font-size;
+}
+
+.done-cancel-button {
+  align-self: flex-end;
+  background: none;
+  width: 81px;
+  height: 40px;
+  font-size: $title-font-size;
+  font-weight: $title-font-weight;
+  color: $primary-button-color;
+}
+
+.done-cancel-button:hover {
+  border-radius: 6px;
+  gap: 8px;
+  background-color: $active-menu-background;
+}
+
+.mat-spinner {
+  ::ng-deep circle {
+    stroke: $primary-button-color;
+  }
+}
+.container
+.mat-dialog-container {
+  background-color: $primary-color;
+  font-size: $medium-font-size;
+}
+
+.done-class {
+  color: #06c802;
+}
+
+.download-done-button-class {
+  @extend.row-justify-end;
+  gap: 20px;
+}
+
+.download-button {
+  width: 170px;
+  color: $primary-color;
+  font-size: $secondary-font-size;
+  font-weight: $title-font-weight;
+  background-color: $primary-button-color;
+}
+
+.cancel-button {
+  width: 81px;
+  height: 40px;
+  font-size: $secondary-font-size;
+  font-weight: $title-font-weight;
+  color: $primary-color;
+  background-color: $primary-button-color;
+}
