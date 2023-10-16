@@ -20,7 +20,7 @@ jobs:
       run: |
         cd Web
         npm install
-    -name: Angular version
+    - name: Angular version
       run: |
         cd Web
         ng -v
