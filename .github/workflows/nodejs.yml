@@ -23,7 +23,7 @@ jobs:
     - name: Angular version
       run: |
         cd Web
-        ng -v
+        npm -v
     - name: Test code
       run: |
         cd Web
