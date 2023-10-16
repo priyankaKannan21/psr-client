@@ -20,11 +20,7 @@ jobs:
       run: |
         cd Web
         npm install
-    - name: Angular Full CI
-      uses: colbyhill21/angular-full-ci@v1.0
-      with:
-        testcommand: ng test
-    - name: Test code
+    - name: Run Test code
       run: |
         cd Web
-        npm test
+        npm run test
