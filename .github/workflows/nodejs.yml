@@ -17,6 +17,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install dependencies
-      run: npm -v
+      run: |
+        cd Web
+        npm install
     - name: Test code
       run: ng test
